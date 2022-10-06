@@ -36,9 +36,10 @@ function renderMovie(movie){
     console.log(button)
     button.addEventListener("click", decreaseTickets)
     function decreaseTickets(){
-        if(span.textContent > 0){
-        span.textContent --}
+        if(span.textContent >= 1){
+            span.textContent --}
         else{
+            button.textContent = "Sold Out"
             alert("No More tickets")
         }
     }
@@ -56,16 +57,26 @@ function renderTitles(titles){
 }
 
 function rendertitle(title){
-    //console.log(title)
+   
     const createList = document.createElement("li")
     const container = document.getElementById("films")
-    //console.log(container)
+    const deleteBtn = document.createElement("button")
+    
 
     //populate
     createList.textContent = title.title
+    deleteBtn.textContent = "Delete"
+
 
     //append
+    createList.append(deleteBtn)
     container.append(createList)
+
+    deleteBtn.addEventListener("click", deleteIt)
+    function deleteIt(){
+        createList.remove()
+    }
+    //clickList    
 
 }
 
