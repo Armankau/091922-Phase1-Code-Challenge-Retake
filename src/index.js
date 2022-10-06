@@ -14,7 +14,6 @@ function fetchIt(movieId){
 function renderMovie(movie){
     //getelements
 
-    console.log(movie)
     const imgEl = document.getElementById("poster")
     const title = document.getElementById("title")
     const runtime = document.getElementById("runtime")
@@ -33,7 +32,7 @@ function renderMovie(movie){
 
     //eventlistener
     const button = document.getElementById("buy-ticket")
-    console.log(button)
+
     button.addEventListener("click", decreaseTickets)
     function decreaseTickets(){
         if(span.textContent >= 1){
